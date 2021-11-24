@@ -1,0 +1,9 @@
+<h3>Async Pipe</h3>
+
+<!-- Directly use the Observable with async pipe
+Whenever users get response *ngFor will perform the looping
+-->
+<div *ngFor="let user of users$ | async">
+    <h6>{{user.id}}. {{user.name}}</h6>
+    <p>{{user.gender}}, {{user.age}} years old</p>
+</div>

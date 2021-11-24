@@ -1,0 +1,16 @@
+<h3>Async Pipe With Alias</h3>
+
+<!-- Since the users data is located inside page object
+First we get the page and store its value in a local variable "page" using alias (as)
+-->
+<div *ngIf="usersPage$ | async as page">
+    <p>Showing top {{page.users.length}} of {{page.count}} </p>
+    <!-- Now use local variable to access users list -->
+    <div *ngFor="let user of page.users">
+        <h6>{{user.id}}. {{user.name}}</h6>
+        <p>{{user.gender}}, {{user.age}} years old</p>
+        <!-- you can also pass the local variable as argument to a function -->
+        <button (click)="greetEvent(user)">Greet</button>
+    </div>
+
+</div>
